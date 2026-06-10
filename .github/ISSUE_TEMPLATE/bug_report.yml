@@ -1,0 +1,40 @@
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+        Tip: You can also report issues directly from the app via Help → Report Issue, which fills in system info automatically.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect? Steps to reproduce.
+    validations:
+      required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: App Version
+      placeholder: e.g. 1.0.0 (Help → About)
+    validations:
+      required: true
+  - type: input
+    id: tia-version
+    attributes:
+      label: TIA Portal Version
+      placeholder: e.g. V20, or "Not connected"
+  - type: input
+    id: os
+    attributes:
+      label: OS Version
+      placeholder: e.g. Windows 11 Pro 10.0.26200
+  - type: textarea
+    id: logs
+    attributes:
+      label: Recent Logs
+      description: Relevant output from the Output panel or the logs folder (Developer — Open Logs Folder), optional
+      render: shell
