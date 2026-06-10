@@ -36,5 +36,5 @@ body:
     id: logs
     attributes:
       label: Recent Logs
-      description: Relevant output from the Output panel or the logs folder (Developer — Open Logs Folder), optional
+      description: Relevant output from the Output panel or the logs folder (Command Palette → "Developer: Open Logs Folder"), optional
       render: shell
