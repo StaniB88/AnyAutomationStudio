@@ -2,6 +2,21 @@
 
 User-facing changes, newest first.
 
+## v1.121.10
+
+- PLC Online — Live Values also shows a function block's interface, InOut and data block members inline.
+- TIA Portal — with Export Fingerprints turned on, the fingerprint file is saved at the top of the export folder you chose.
+- Forge — deploying a graph also brings the data types its blocks rely on, so their interfaces resolve in TIA Portal.
+- Forge — giving a block a library type pulls the data types it needs into the graph for you.
+- Extensions — the marketplace loads reliably when you open and search it.
+- TIA Portal — filter the Project Explorer: click the filter icon in its header (or press Ctrl+Alt+F) and type to narrow to matching blocks, folders and tags anywhere in the project.
+- TIA Portal — compare two open projects side by side and copy selected blocks from one into the other.
+- Sign-in — works on company networks that reach the internet through an HTTP proxy or inspect HTTPS with a corporate certificate.
+- AI — Sign in to or out of GitHub Copilot from Agent Customizations → Providers, alongside your other model providers.
+- SCL editor — valid code using compound assignment (`+=`), chained assignment, bit-slice access, symbolic CASE labels, nested comments and organization blocks no longer shows false error markers.
+- SCL editor — Go to Definition on a nested interface member jumps to that member's row in the open block's interface, expanding the path to it.
+- SCL editor — right-click a member in the block interface (or press Shift+F12) to see every place it is used in the block's code.
+
 ## v1.121.9
 
 - TIA Portal — going online to a password-protected CPU prompts for your user name and password, so its program can be compared and read with your own access rights.
@@ -118,7 +133,7 @@ User-facing changes, newest first.
 - Import/Export — S7DCL files can be imported from the export folder or via drag & drop (TIA Portal V20 or newer); if the same block also exists alongside as SCL, AWL, or XML, that version is imported instead.
 - Hardware — right-click a device, rack, or module in the project tree to add, move, copy, change the type of, or remove individual modules (also available to the AI assistant).
 - Project Explorer — the header shows the active project's name; click it to switch between connected projects or add another, and the sidebar gains the space of the former title row.
-- Project Explorer — Go Online on a CPU connects to the controller — type the controller's IP address yourself or search the network for it — and marks every block, folder, and the CPU with a sync dot showing how your project compares to what is running; the dots stay until you go offline, and Refresh Compare updates them.
+- Project Explorer — Go Online on a CPU connects to the controller — type the controller's IP address yourself or search the network for it — and marks every block, tag table, folder, and the CPU with a sync dot showing how your project compares to what is running; the dots stay until you go offline, and Refresh Compare updates them.
 - Project Explorer — opening a project file from disk without TIA Portal shows the HMI panel and its screens, tags, connections, and lists in the tree alongside the controllers.
 - Import/Export — running operations show a live stopwatch next to the progress, and the total duration stays visible after they finish.
 - Import/Export — after the last exported item, the progress shows the remaining preparation steps, and cancelling during them warns which files were left unprepared.
