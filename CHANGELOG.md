@@ -2,6 +2,10 @@
 
 User-facing changes, newest first.
 
+## v1.121.12
+
+- Extensions — installing a marketplace extension checks its signature automatically.
+
 ## v1.121.11
 
 - Editor — choose whether a data type opens as readable .udt source or as XML.

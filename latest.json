@@ -1,12 +1,12 @@
 {
-  "commit": "fb4652c4e3fee2697155428ebefdcd8bd18398cf",
-  "productVersion": "1.121.11",
-  "timestamp": 1782946967687,
+  "commit": "f2752dc4eeb2ffef283e06ef815cbdc5ebbfaf54",
+  "productVersion": "1.121.12",
+  "timestamp": 1782971635478,
   "rolloutPercentage": 100,
   "platforms": {
     "win32-x64": {
-      "url": "https://github.com/StaniB88/AnyAutomationStudio/releases/download/v1.121.11/AnyAutomationStudioSetup-x64-1.121.11.exe",
-      "sha256hash": "841087ec17fba75a585329431198cafcc71020cb09e8209eb96062d679940344"
+      "url": "https://github.com/StaniB88/AnyAutomationStudio/releases/download/v1.121.12/AnyAutomationStudioSetup-x64-1.121.12.exe",
+      "sha256hash": "bce600ee42f76aca8f363cf9851f8042b2d67cf5d2550cee6b65735e23ff7bdf"
     }
   }
 }
