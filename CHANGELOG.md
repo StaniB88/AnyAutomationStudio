@@ -2,6 +2,21 @@
 
 User-facing changes, newest first.
 
+## v1.121.13
+
+- AI Chat — Google Gemini models reply in Agent mode.
+- AI Chat — when a model provider declines a request, the chat shows the provider's own reason.
+- AI Chat — messages send reliably after closing Settings or another pop-up editor.
+- Forge — removing a node can also remove the objects only that node references; the dialog lists them, and anything still used elsewhere stays.
+- Forge — capturing a device as a device type works reliably.
+- AI Chat — the assistant can look at on-screen application windows and, after you confirm, click or type into the applications you allow.
+- AI Chat — the Tool Approvals page is arranged in clear cards, and you can choose which applications the assistant may see there.
+- AI Chat — runs quietly in the background while you are not chatting.
+- AI Chat — long agent conversations use far less of your model provider's token quota.
+- AI Chat — the context-usage details show what share of your prompt was served from the model's cache.
+- AI Chat — optionally keep Claude's prompt cache warm for an hour to speed up long sessions with pauses between messages.
+- AI Chat — follow-up messages on ChatGPT models send less and respond faster.
+
 ## v1.121.12
 
 - Extensions — installing a marketplace extension checks its signature automatically.
