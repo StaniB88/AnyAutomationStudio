@@ -2,6 +2,21 @@
 
 User-facing changes, newest first.
 
+## v1.127.0
+
+- Agent Window — choosing a different folder in the Files panel switches to that workspace.
+- AI Chat — a specialist assistant you select works on your request directly, with the tools for its job.
+- AI Chat – every message uses noticeably fewer of your model's context tokens.
+- AI Chat – the context-usage details describe unattributed tokens more clearly.
+- TIA Portal – the Import/Export file list can be filtered the same way as the Project Explorer.
+- AI Chat – in projects without TIA Portal content the assistant works as a regular coding assistant and brings up TIA Portal only when you ask for it.
+- AI Chat – conversations in projects without TIA Portal content use noticeably less of your model's context window.
+- AI Chat – the assistant recognizes a TIA Portal connection you made yourself and does not connect again.
+- AI Chat – the context-usage details show a much more accurate token breakdown.
+- AI Chat — your model-provider sign-in stays active throughout a conversation.
+- AI Chat — models you gain access to appear in the picker right after you sign in.
+- AI Chat — OpenAI Provider, images you attach to a message reach the model.
+
 ## v1.121.13
 
 - AI Chat — Google Gemini models reply in Agent mode.
@@ -9,6 +24,7 @@ User-facing changes, newest first.
 - AI Chat — messages send reliably after closing Settings or another pop-up editor.
 - Forge — removing a node can also remove the objects only that node references; the dialog lists them, and anything still used elsewhere stays.
 - Forge — capturing a device as a device type works reliably.
+- Forge — build a machine template with options and per-device quantities, turn any configuration of it into a complete wired and addressed project, and export a machine catalog or an as-built manifest for other systems.
 - AI Chat — the assistant can look at on-screen application windows and, after you confirm, click or type into the applications you allow.
 - AI Chat — the Tool Approvals page is arranged in clear cards, and you can choose which applications the assistant may see there.
 - AI Chat — runs quietly in the background while you are not chatting.
