@@ -2,17 +2,24 @@
 
 User-facing changes, newest first.
 
+## v1.127.1
+
+- AI Chat – the assistant carries what its earlier tools found into your follow-up questions.
+- AI Chat – Session Info gives a token breakdown of your conversation by category.
+- AI Chat – generating a block into TIA Portal checks the block name in your code against the name you gave and flags a mismatch.
+- TIA Portal – importing or generating blocks tells you which items were added to the project.
+- AI Chat – TIA actions follow the approval mode you pick in the chat and your per-tool approval settings.
+
 ## v1.127.0
 
 - Agent Window — choosing a different folder in the Files panel switches to that workspace.
 - AI Chat — a specialist assistant you select works on your request directly, with the tools for its job.
 - AI Chat – every message uses noticeably fewer of your model's context tokens.
-- AI Chat – the context-usage details describe unattributed tokens more clearly.
+- AI Chat – the context-usage details show unattributed tokens (provider overhead and tokenizer) as their own line.
 - TIA Portal – the Import/Export file list can be filtered the same way as the Project Explorer.
 - AI Chat – in projects without TIA Portal content the assistant works as a regular coding assistant and brings up TIA Portal only when you ask for it.
 - AI Chat – conversations in projects without TIA Portal content use noticeably less of your model's context window.
 - AI Chat – the assistant recognizes a TIA Portal connection you made yourself and does not connect again.
-- AI Chat – the context-usage details show a much more accurate token breakdown.
 - AI Chat — your model-provider sign-in stays active throughout a conversation.
 - AI Chat — models you gain access to appear in the picker right after you sign in.
 - AI Chat — OpenAI Provider, images you attach to a message reach the model.
@@ -21,9 +28,8 @@ User-facing changes, newest first.
 
 - AI Chat — Google Gemini models reply in Agent mode.
 - AI Chat — when a model provider declines a request, the chat shows the provider's own reason.
-- AI Chat — messages send reliably after closing Settings or another pop-up editor.
+- AI Chat — the message box stays ready after you close Settings or another pop-up editor.
 - Forge — removing a node can also remove the objects only that node references; the dialog lists them, and anything still used elsewhere stays.
-- Forge — capturing a device as a device type works reliably.
 - Forge — build a machine template with options and per-device quantities, turn any configuration of it into a complete wired and addressed project, and export a machine catalog or an as-built manifest for other systems.
 - AI Chat — the assistant can look at on-screen application windows and, after you confirm, click or type into the applications you allow.
 - AI Chat — the Tool Approvals page is arranged in clear cards, and you can choose which applications the assistant may see there.
@@ -46,13 +52,13 @@ User-facing changes, newest first.
 - Git — set your commit-message and pull-request styleguide in the AnyAutomation settings, with a Browse button to point at a styleguide file on disk.
 - Git — save your own commit-message and pull-request styleguide in Settings, and generated text follows your conventions.
 - AI Chat — optimized agent context: the assistant loads reference material only when it is relevant.
-- AI Chat — first message responds faster and the chat starts cleanly.
+- AI Chat — the first message responds faster.
 - PLC Online — a new OPC UA connection starts with a default endpoint address already filled in.
 - Compare — comparing your project to its export folder is much faster once you have exported it.
 - Forge — capture a device from your project as a reusable device type.
 - TIA Portal — a block's interface opens faster, and reopening one you have already viewed is instant.
 - Hardware Simulation — the Force, Watch, Function and Linker panels show their contents as soon as you open it.
-- Hardware Simulation — functions and forces drive their tags reliably over an OPC UA connection.
+- Hardware Simulation — functions and forces drive their tags over an OPC UA connection.
 - Unit Testing — the Failures view's buttons and filter field match the app theme.
 - TIA Portal — exporting compiles the PLC beforehand, and importing compiles it once the files are in.
 - TIA Portal — import, compare and find-unused show their progress and cancel option in the status bar, keeping your workspace clear.
@@ -63,12 +69,12 @@ User-facing changes, newest first.
 - TIA Portal — with Export Fingerprints turned on, the fingerprint file is saved at the top of the export folder you chose.
 - Forge — deploying a graph also brings the data types its blocks rely on, so their interfaces resolve in TIA Portal.
 - Forge — giving a block a library type pulls the data types it needs into the graph for you.
-- Extensions — the marketplace loads reliably when you open and search it.
+- Extensions — open the marketplace and search the catalog.
 - TIA Portal — filter the Project Explorer: click the filter icon in its header (or press Ctrl+Alt+F) and type to narrow to matching blocks, folders and tags anywhere in the project.
 - TIA Portal — compare two open projects side by side and copy selected blocks from one into the other.
 - Sign-in — works on company networks that reach the internet through an HTTP proxy or inspect HTTPS with a corporate certificate.
 - AI — Sign in to or out of GitHub Copilot from Agent Customizations → Providers, alongside your other model providers.
-- SCL editor — valid code using compound assignment (`+=`), chained assignment, bit-slice access, symbolic CASE labels, nested comments and organization blocks no longer shows false error markers.
+- SCL editor — the error checker accepts compound and chained assignment, bit-slice access, symbolic CASE labels, nested comments and organization blocks.
 - SCL editor — Go to Definition on a nested interface member jumps to that member's row in the open block's interface, expanding the path to it.
 - SCL editor — right-click a member in the block interface (or press Shift+F12) to see every place it is used in the block's code.
 
@@ -113,7 +119,7 @@ User-facing changes, newest first.
 - AI — The chat assistant can read the exact live content of an open tab, including your unsaved edits, for TIA blocks and files.
 - AI — Ask the chat assistant to change an open TIA Portal block and it makes a precise inline edit, touching only the lines that need it, shown as a reviewable diff you upload when you save.
 - Block editor — open and edit ladder, function-plan and S7-GRAPH blocks as source, toggle to the graphical view, and save to update the project (TIA Portal V20 and newer).
-- TIA Portal — open a classic WinCC (Comfort/Advanced) panel screen, see it drawn faithfully as it appears on the panel — with symbolic and numeric field text, real graphics and symbol bevels — and ask the chat assistant to read it and to move, restyle, label, add or remove objects live before you save the changes back to TIA.
+- TIA Portal — open a classic WinCC (Comfort/Advanced) panel screen, see it drawn as on the panel, and ask the chat assistant to move, restyle, label, add or remove objects before saving back to TIA.
 - AI — The chat assistant can see which editor tabs you have open (TIA blocks and files), so it can work with what you are looking at.
 - AI — Let the chat assistant search the web during a conversation, on any model, and choose your search provider (turn it on in settings).
 - TIA Commissioning — download a project to a CPU over a chosen network adapter.
@@ -195,14 +201,14 @@ User-facing changes, newest first.
 - Import/Export — source files you add to the export folder yourself are imported into their matching program folder by Import All.
 - Help — the About dialog now lists the support e-mail, website, and source-code repository.
 
-- Forge — large project graphs open instantly as a searchable dependency browser: browse the blocks as a folder tree, right-click a block for actions, pick a block to see what uses it and what it uses, filter by relationship, drag to resize the panels, and switch to a neighborhood view of a block and its direct neighbors — step the depth up to see further-out dependencies, reveal more blocks in a busy level a batch at a time, and scroll to zoom or middle-drag to pan around it — with the same right-click actions on its blocks.
+- Forge — large project graphs open as a searchable dependency browser: browse blocks as a folder tree, see what uses a block and what it uses, filter by relationship, and switch to a neighborhood view around any block.
 - Forge — install a ready-made example library and project graph to see how block generation works.
 - Forge — choose where your Block Type Library is stored and version it with Git.
 - Forge — Project Graphs are saved with your project, or in a folder you pick, and can be versioned with Git.
 - Forge — rename a project graph by right-clicking it in the Project Graphs list, and the new name shows everywhere.
 - Forge — a captured project graph is named after the project.
 - Forge — the Block Type Library keeps folders collapsed until you open them, and remembers which ones you expanded.
-- Forge — define a **Monitor-Feld** and color-coded states on a block type in the library; once the monitor is active, each block row in the Project Objects table shows the matched state label and a color dot, the Project Tree shows a status dot on each block node, and the Project Graph shows a state badge on each block card — all updated live from the connected PLC.
+- Forge — define a monitor field with color-coded states on a library block type, and see each block's live state as a label, a dot, or a badge in the Project Objects table, tree, and graph.
 - Forge — open a project graph in the Project Objects table, press **Monitor**, and the table shows the current PLC value for each tag row next to its configuration — updated live while you work.
 - Forge — start Monitor and go online directly from the project graph.
 - Forge — click the eye on a row in the project-objects table to watch just that value live, without turning on Monitor for everything.
@@ -231,7 +237,7 @@ User-facing changes, newest first.
 - Editor — after you save, see compile errors and warnings and click one to open the affected block.
 - Editor — view and edit a tag table's tags and constants.
 - Editor — open a local source file to view and edit its interface, then save it.
-- Editor — write SCL with live error checking, code completion, hover, an outline of the block's structure, jump to where a symbol is defined (including to another block), find a symbol's uses, rename a local variable, coloring that tells parameters, variables, constants, and block references apart, highlighting of every occurrence of the symbol under the cursor, one-click fixes for a missing semicolon, a missing keyword such as THEN or DO, or a missing block terminator, and Format Document (or Format Selection for just the highlighted lines, or formatting each line as you type) to re-indent the block to its structure, uppercase its keywords, tidy the spacing around operators, and collapse extra blank lines, aware of your connected project's blocks.
+- Editor — write SCL with live error checking, completion, hover, an outline, go-to-definition, find-references, rename, semantic coloring, one-click quick fixes, and Format Document, aware of your connected project's blocks.
 - Editor — type a dot after a block or instance to suggest its members, hover a member to see its type, and jump to the member's owning block.
 
 - Compare — review which blocks differ between your connected project and your export folder, open any block to see the differences side by side, then import the changes you select back into your project.
@@ -334,7 +340,7 @@ User-facing changes, newest first.
 - PLC Online — show or hide each tool panel, and save your connections and layout to a workspace file to reopen later.
 - PLC Online — adjust logging, certificate handling, and other settings per connection.
 
-- Trace — visualize live PLC signals over time as an oscilloscope, pick signals by browsing the live PLC address-space tree, zoom and measure with two cursors, scan the whole recording with an overview minimap and drag it to pan, group signals onto separate Y axes so fast and slow signals stay readable together, arm a single-shot trigger, view the frequency spectrum (FFT), and export the recording as CSV; connections stay alive when you switch between PLC Online and Trace.
+- Trace — visualize live PLC signals over time as an oscilloscope: pick signals from the address-space tree, zoom and measure with two cursors, group signals onto separate Y axes, arm a single-shot trigger, view the FFT, and export the recording as CSV.
 - Trace — click a signal's color dot in the signal table to pick its curve color.
 
 - PLC Simulation — manage PLCSIM Advanced simulation instances and read or write live simulation tags from a dedicated panel.
@@ -410,9 +416,9 @@ User-facing changes, newest first.
 - Forge — select any node or connection on the canvas and edit its properties in the Inspector.
 - Forge — import a project graph's generated code straight into the open TIA Portal project.
 - Forge — build your own reusable block types (SCL, UDT, data blocks) in a global library and use them in every project.
-- Forge — right-click in the TIA Project Explorer to capture a project's blocks, data types and tag tables into your Block Type Library, organized in folders that match the project — same-named items at the project root and inside a Software Unit are kept apart — and see which items could not be captured and why.
-- Forge — deploy your whole Block Type Library into a connected PLC with one click from the library or the Project Explorer toolbar, with blocks grouped just as they are in the library; anything that cannot be imported is skipped up front and named with the reason.
-- Forge — deploy a project graph straight into a connected PLC as blocks, data types and tag tables — one click from the open graph, the Project Graphs list, or the Project Explorer toolbar, with a graph picker when several exist; anything that cannot be imported is skipped up front and named with the reason.
+- Forge — capture a project's blocks, data types and tag tables into your Block Type Library from the TIA Project Explorer, organized into folders that match the project.
+- Forge — deploy your whole Block Type Library into a connected PLC with one click, with blocks grouped as in the library.
+- Forge — deploy a project graph straight into a connected PLC as blocks, data types and tag tables with one click.
 - Forge — turn a connected TIA project into a project graph with matching library types, ready to build and deploy back.
 - Forge — browse a project graph's objects as a folder tree in the side bar, and jump from any object to the Inspector or to its place on the canvas.
 - Forge — open a project graph's objects in a filterable table, edit a value in place, and set one property across many objects at once.
