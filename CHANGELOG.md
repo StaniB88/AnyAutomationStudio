@@ -2,6 +2,16 @@
 
 User-facing changes, newest first.
 
+## v1.128.5
+
+- TIA Portal – disconnecting from a project takes effect right away.
+- TIA Portal – switching back to an already open block tab is instant, and saving a block starts faster.
+- AI Chat – the assistant can run larger multi-step jobs that fan out work to several specialist agents, with live progress, a confirmation before it starts, and a cap on how many agents run at once; needs the Pro plan.
+- AI Chat – a new Ultracode switch in the model menu lets the assistant run larger multi-step jobs on its own without confirming each one; works on any model, needs the Pro plan.
+- AI Chat – long conversations run into connection errors less often, and specialist requests cost less.
+- AI Chat – the assistant corrects and completes failed actions more often.
+- AI Chat – the assistant tells user constants and tags apart more reliably, and edits comments in your project's editing language, keeping comments in other languages intact.
+
 ## v1.128.4
 
 - TIA Portal – technology objects can be created, edited and deleted from the project tree and from AI chat, and most types open as editable XML.
