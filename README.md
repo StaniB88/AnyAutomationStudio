@@ -4,6 +4,7 @@
 
 [![Website](https://img.shields.io/badge/Website-anyautomation.ch%2Fstudio-7C3AED)](https://anyautomation.ch/studio)
 [![Download](https://img.shields.io/badge/Download-Latest%20Release-22C55E)](https://github.com/StaniB88/AnyAutomationStudio/releases/latest)
+[![YouTube](https://img.shields.io/badge/YouTube-%40AnyAutomation--Studio-FF0000)](https://www.youtube.com/@AnyAutomation-Studio)
 [![TIA Portal](https://img.shields.io/badge/TIA%20Portal-V15--V21-orange)]()
 [![Platform](https://img.shields.io/badge/Platform-Windows%20x64-lightgrey)]()
 
@@ -167,6 +168,7 @@ English · Deutsch · Français · Italiano · Español · Português (BR) · T�
 
 - **Website:** [anyautomation.ch](https://anyautomation.ch/)
 - **Docs:** [anyautomation.ch/docs](https://anyautomation.ch/docs)
+- **YouTube:** [youtube.com/@AnyAutomation-Studio](https://www.youtube.com/@AnyAutomation-Studio)
 - **Issues:** [GitHub Issues](https://github.com/StaniB88/AnyAutomationStudio/issues)
 
 ---
