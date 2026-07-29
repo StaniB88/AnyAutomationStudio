@@ -2,17 +2,14 @@
 
 User-facing changes, newest first.
 
-## Unreleased
+## v1.130.1
 
+- Terminal – the integrated terminal opens and runs commands again.
 - AI Chat – the first chat reply starts right away even while a project export or import is running.
 - AI Chat – pressing Stop also cancels a TIA action the assistant is waiting on.
 - AI Chat – the conversation keeps working after you stop the assistant during a tool action.
 - TIA Portal – when no working folder is set, temporary files are kept in the computer's temporary folder and never appear in the opened folder.
 - TIA Portal – when no working folder and no export target are set, exports go to an AnyAutomationStudio folder in your user profile.
-
-## v1.130.1
-
-- Terminal – the integrated terminal opens and runs commands again.
 
 ## v1.130.0
 
