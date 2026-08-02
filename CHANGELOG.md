@@ -2,6 +2,11 @@
 
 User-facing changes, newest first.
 
+## v1.130.2
+
+- SCADA – included in the Pro plan.
+- SCADA – the plan notice shown on SCADA actions names SCADA as the feature to unlock.
+
 ## v1.130.1
 
 - Terminal – the integrated terminal opens and runs commands again.
