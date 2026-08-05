@@ -2,6 +2,28 @@
 
 User-facing changes, newest first.
 
+## v1.130.3
+
+- AI Chat – every Studio tool sits under one AnyAutomation Studio Tools entry in the tool picker, grouped into categories with an on/off switch per category.
+- AI Chat – every tool the assistant can use has exactly one entry in the tool picker, and switching it off keeps it off.
+- AI Chat – the tool picker offers only the tool categories your plan covers, for example SCADA and OPC UA with the Pro plan, EPLAN and Forge with the Pro+ plan.
+- Agent Window – tool switches in the Tools list apply to the session.
+- AI Chat – the assistant sees images and screenshots you attach, throughout the conversation, and more models let you attach them.
+- AI Chat – every message uses noticeably less of your quota, most of all in small conversations.
+- AI Chat – consulting a specialist uses far less quota, and asking the same specialist again costs less still.
+- AI Chat – conversations with large attached files stay fast.
+- AI Chat – a conversation that outgrows the model's context window, or the Context Size you picked for it, is summarized automatically and continues.
+- AI Chat – with automatic summarization turned off, an oversized chat tells you how to continue.
+- AI Chat – Claude models with a large context window use their full window by default.
+- AI Chat – changing a local AI model's context size takes effect on your next message.
+- AI Chat – when a reply fails, the chat shows the reason the AI provider reported.
+- AI Chat – the token numbers in Session Info match the provider's own count.
+- AI Chat – signed in with a Claude or OpenAI account, a provider icon in the status bar opens a usage overview with your plan, your session and weekly limits, and when each one resets.
+- AI Chat – an expired Claude sign-in can be renewed with Sign In on the provider card.
+- AI Chat – the Auto entry appears in the model picker only while signed in to GitHub Copilot.
+- SCL editor – valid code shows far fewer wrong error markers.
+- SCL editor – renaming a local variable changes only that variable.
+
 ## v1.130.2
 
 - SCADA – included in the Pro plan.
