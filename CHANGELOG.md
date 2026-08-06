@@ -2,6 +2,24 @@
 
 User-facing changes, newest first.
 
+## v1.130.4
+
+- AI Chat – long conversations keep getting full answers.
+- AI Chat – every model in the picker can answer your messages.
+- AI Chat – the model picker shows your provider's full list of models.
+- AI Chat – each model shows its true context size.
+- AI Chat – each model offers the thinking depth levels it supports, including off.
+- AI Chat – you can watch a reasoning model think on many more providers.
+- AI Chat – an answer that was cut off, refused or blocked tells you so.
+- AI Chat – the assistant keeps going through a brief connection problem.
+- AI Chat – the assistant can run several actions at the same time.
+- AI Chat – conversations with emoji and special characters keep working.
+- AI Chat – the assistant sees an image a tool returns, whichever model you use.
+- Inline Chat – every model edits the file directly.
+- AI Chat – with an xAI connection, your prompts and replies are not kept on the service.
+- AI Chat – the model picker offers the latest Gemini Pro, Flash and Flash Lite.
+- AI Chat – Kimi Coding answers your messages.
+
 ## v1.130.3
 
 - AI Chat – every Studio tool sits under one AnyAutomation Studio Tools entry in the tool picker, grouped into categories with an on/off switch per category.
