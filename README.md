@@ -19,9 +19,7 @@ This repository is also the **public release channel**.
 ## Download & Install
 
 1. Open the [Releases](https://github.com/StaniB88/AnyAutomationStudio/releases/latest) page.
-2. Download one of:
-   - `AnyAutomationStudioUserSetup-x64-*.exe` — **per-user** install (recommended, no admin rights)
-   - `AnyAutomationStudioSetup-x64-*.exe` — **system-wide** install (requires admin)
+2. Download `AnyAutomationStudioSetup-x64-*.exe` (system-wide install, one admin prompt; TIA Portal Openness access is registered automatically).
 3. Run the installer and launch AnyAutomation Studio.
 
 Studio checks for updates on startup and installs them in the background. New users get a free trial with all features unlocked.
