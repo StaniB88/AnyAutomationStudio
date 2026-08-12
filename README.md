@@ -103,6 +103,12 @@ Capture existing blocks into a reusable **Block Type Library**, organise them in
 
 ![Forge project graph](screenshots/ForgeNeighbor.png)
 
+### SCADA — Generate a FUXA Dashboard
+
+[![Generate a FUXA web SCADA from a Siemens TIA Portal project (video)](screenshots/fuxa-scada.png)](https://www.youtube.com/watch?v=UH5bOJk1R7U)
+
+Turn a CPU's OPC UA nodes into a complete **FUXA** web SCADA: one OPC UA device, a tag per signal, and screens grouped by function. Provision it straight onto a self-hosted FUXA instance over the admin REST API, or save it as a project file. Every tag binds to its real OPC UA node id, so live values work immediately. FUXA is open source (MIT) by frangoteam. [Watch the demo.](https://www.youtube.com/watch?v=UH5bOJk1R7U)
+
 ### Trace
 
 ![Live signal trace and dashboards](screenshots/TraceOPCUA.png)
