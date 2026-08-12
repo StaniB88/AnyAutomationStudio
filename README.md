@@ -52,6 +52,7 @@ Studio puts an AI assistant at the centre of automation engineering — across y
 | **Forge** | Reusable block-type library — capture, organise, deploy into a PLC. |
 | **OPC UA** | Browse the address space, read/write, live subscriptions. |
 | **Trace** | Oscilloscope-style live signal trace and dashboards. |
+| **SCADA** | Generate a [FUXA](https://github.com/frangoteam/FUXA) web SCADA from your PLC's signals and provision it to a running instance ([demo video](https://www.youtube.com/watch?v=UH5bOJk1R7U)). |
 | **Import / Export** | Bulk export/import with folder structure, compile, and diff. |
 | **Find Unused** | Detect and clean up unreferenced blocks across the project. |
 | **Password Vault** | AES-256 encrypted vault for know-how-protection passwords. |
