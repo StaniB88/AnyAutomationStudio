@@ -2,6 +2,123 @@
 
 User-facing changes, newest first.
 
+## v1.134.0
+
+### Compare Editor
+
+<video src="https://anyautomation.ch/video/releasenotes/compare-editor-1.134.0.mp4" poster="https://anyautomation.ch/video/releasenotes/compare-editor-1.134.0.jpg" autoplay loop muted controls playsinline></video>
+
+[Compare Two TIA Portal Projects Block by Block, and Merge the Difference Back (YouTube)](https://www.youtube.com/watch?v=gi87Uq_gyDs)
+
+- A Compare icon in the activity bar compares your project against a second project or your export folder, with source and target changeable in the editor.
+- The comparison list shows both sides next to each other, and a side an item is missing on says so.
+- A name filter above the list narrows it while you type, and the folder structure can be switched off for a flat list.
+- A shield button hides all safety blocks from the comparison list.
+- Each row shows who last changed the block and when, with author and both timestamps in its tooltip.
+- The comparison list can also be narrowed to tag tables, and tag tables carry their own icon.
+- The comparison list starts with nothing selected; you tick the entries you want to import or copy.
+- The column dividers can be dragged to re-proportion source, status and target, each one moving only the two columns it separates, and the widths are remembered.
+- The target side of a project comparison can be edited and saved straight from the diff, including taking a change over from the other side.
+- Included from the Basic plan.
+- Each row in the comparison list shows the icon of its block type.
+- The comparison list can be narrowed to OB, FB, FC, DB or UDT, with a count per type.
+
+### Commissioning Report
+
+<video src="https://anyautomation.ch/video/releasenotes/commissioning-report-1.134.0.mp4" poster="https://anyautomation.ch/video/releasenotes/commissioning-report-1.134.0.jpg" autoplay loop muted controls playsinline></video>
+
+[FAT and SAT Protocols Without the Paperwork: Live IO Checks, Signed and Exported (YouTube)](https://www.youtube.com/watch?v=VsYjdSAuV_o)
+
+- Create FAT/SAT acceptance reports from the open TIA project: the report collects stations, modules, network data and an IO checklist, you tick off each point during commissioning, and export a print-ready HTML or PDF document with your company data on the cover and your own footer line, editable per report, on every PDF page (Pro+).
+- With a connected PLC the report also captures the CPU's actual state: serial number, firmware, protection level, memory usage, cycle times and the diagnostic buffer, with deviations between project and CPU highlighted (Pro+).
+- The IO checklist can run live against the connected PLC: it shows live values, points you actuate on site are ticked off automatically with your name and time, and outputs can be set from the list after a confirmation (Pro+).
+- A Commissioning icon in the activity bar lists the reports in your working folder; one click opens a report, a plus button creates a new one.
+- Function test checklists can be filled from the project: a filter picker lists the functions and function blocks of every PLC, and each added function shows its author plus creation and last-change timestamps (Pro+).
+- Every test step can state the expected result next to the observed remark.
+- Analog IO points take a target and a measured value, and during a live check one click captures the current value (Pro+).
+- A result summary shows totals for the IO checklist, function tests and deviations, on screen and in the exported document.
+- A commissioning diary records what was done on which day and prints with the report.
+- A participants list on the cover page gives every attendee a personal signature block in the exported document.
+- Reports can be finalized: a finalized report is locked and exports without the draft watermark, and reopening it asks for a reason that lands in the revision history.
+- Photos can be attached to an IO point, a function test, a deviation or the report itself, from the appendix or straight from the row you are working on; they print as captioned figures in the report's appendix.
+- An enclosures list names the external documents that belong to the report, such as the safety printout, and prints in the appendix.
+- Function test checklists can be saved as a template and added to any other report, with a ready-made template for alarm and message tests included.
+- A site acceptance can take over the results of an earlier report, either everything recorded or only the passed points so the rest stays open for the re-test; what was already checked on site stays as it is, results of a block or safety program whose recorded version differs between the two reports stay open as well, the revision history names the report the results came from, and a report from another project asks first.
+- One click adds a prefilled test checklist for every fail-safe runtime group of the project, with its signature recorded (Pro+).
+
+### PLC Online
+
+- A PLC connection stays up while you work in another tab, and the status bar keeps showing how many connections are live.
+- A CPU panel that cannot be read says so on its own tab and offers Retry, and a CPU without a diagnostic buffer says that plainly.
+
+### TIA Portal
+
+- Standard blocks whose names begin with F_ export with their SCL or STL source and keep their regular block icon; only fail-safe blocks are shown and exported as safety blocks.
+
+### SCADA
+
+- Input fields on generated FUXA screens accept typed values and show live values.
+
+### Unit Testing
+
+- The command-line test runner needs a licence file, which you save from the Generate CI Pipeline dialog (Pro+).
+
+### AI Chat
+
+- Ctrl+F searches the whole conversation and steps through the matches, with match-case, whole-word and regular-expression options.
+- In a long conversation the prompt you scrolled past stays pinned at the top of the chat, and a click on it jumps back to it.
+- Expanded terminal output re-wraps to the width of the chat as you resize it.
+- Agent plugins install from the Extensions view or a local folder and bring their agents, commands, rules and MCP servers into the chat.
+- Press the microphone in the chat input to dictate your message; speech is turned into text on your machine, and the speech model downloads once at first use.
+- The assistant can read your hardware configuration and draft the descriptive text for a commissioning report from real project data.
+- The TIA, EPLAN, Visual Context and Commissioning tools follow the approval level you set for them without exception: Allow in This Session or Always Allow lets a tool run without asking again, Always Deny refuses it without a card.
+- Once you let the chat approve tool calls for you, the live PLC, Forge, SCADA and CODESYS tools run without asking as well; leave the chat on its default approval setting to keep being asked.
+- On a confirmation card the highlighted button allows the tool for the rest of the session; pick Allow Once from the card to let it run a single time.
+- The assistant can read and fill a commissioning report: cover data, test checklists and steps, results with remarks and measured values, deviations, diary, participants, photos and templates, and it can collect project data and export the document (Pro+).
+
+### Agent Window
+
+- A timeline beside the conversation marks each of your prompts: hover it to list them, pick one to jump back, and prompts that changed files show how many lines were added and removed.
+- A session can hold several chats: open another with the plus button, drag the tabs to place chats side by side or below each other, and the arrangement comes back when you return to the session.
+
+### Editor
+
+- Start Dictation in Editor and the terminal's Start Dictation command dictate into the active editor or terminal.
+- When a file can be opened in more than one way, a picker in the breadcrumb bar switches between them and can set your choice as the default.
+- A Markdown file can open as a formatted document, in reading mode until you switch it to editing; the Agent Window opens Markdown that way by default.
+- A Markdown comparison can be switched to the formatted view, with added, changed and deleted content marked in the margin.
+- A local HTML file opened in the integrated browser refreshes whenever the file changes, and the integrated browser can be set as the default editor for HTML files.
+- In the integrated browser you can pick elements on the page, add a comment to each and send them to the chat.
+- Holding Alt turns a tab's close button into Close Others, so one click closes the other editors in that group.
+
+### Terminal
+
+- The size overlay shown while resizing a terminal can be switched off in the settings (Terminal, Resize Dimensions Overlay).
+- With a screen reader, your reading position in the terminal's accessible view stays where you left it as new output arrives, once you choose Always in the settings (Terminal, Accessible View Preserve Cursor Position).
+
+### Appearance
+
+- Studio opens with the refreshed look: the side bars and the bottom panel appear as floating cards with rounded corners; the classic layout stays available in the settings (Workbench, Modern UI).
+
+### Settings
+
+- A new Company Profile page stores your company name, address, logo and default commissioning engineer for generated reports.
+
+### Licensing
+
+- PLC Online over S7 is part of the Pro plan and unlocked during the free trial.
+- Online commissioning, the commissioning report, Unit Testing and Hardware Simulation are part of the Pro+ plan, all unlocked during the free trial.
+- Enterprise accounts can use PLC Online over S7, online commissioning, Forge, EPLAN and Hardware Simulation.
+- Studio keeps running on your licence when the licence service cannot be reached.
+- A renewal payment that is still being confirmed does not interrupt your work.
+- An organization seat you accept in the browser is active as soon as you return to Studio.
+- Organization members see their machine switches in the License window and can release a machine on their account page.
+- When your licence is bound to another machine, the License window tells you what to do next.
+
+### Studio
+
+- Every scrollbar in the AnyAutomation views, dialogs and reports follows the colour theme.
+
 ## v1.130.4
 
 - AI Chat – long conversations keep getting full answers.
