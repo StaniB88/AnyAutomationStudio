@@ -2,6 +2,16 @@
 
 User-facing changes, newest first.
 
+## v1.134.1
+
+### AI Chat
+
+- The tool picker, the expert agents and the skills come ready for your plan, and an upgrade takes effect right away, with no restart and no setup.
+
+### Studio
+
+- General improvements.
+
 ## v1.134.0
 
 ### Compare Editor
