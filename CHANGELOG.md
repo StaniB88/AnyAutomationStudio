@@ -4,6 +4,134 @@ User-facing changes, newest first. The newest section is titled "Unreleased" unt
 fixes the version number; scripts/release.ps1 and scripts/publish.ps1 refuse to run until it is
 renamed to the actual "## v<version>".
 
+## v1.135.0
+
+### WinCC Unified
+
+- The project tree shows every part of a WinCC Unified device in the order TIA Portal uses: runtime settings, screens, tag tables with their folders, system tags, connections, alarms, alarm classes, historical data, scripts, and text and graphic lists.
+- Alarms, alarm classes, connections, data logs, alarm logs, audit trails, logging tags, system tags, OPC UA alarms, text lists, system text lists, graphic lists and the runtime settings open in a detail view listing every property, with read-only values marked.
+- Multilingual texts in the detail view appear in the display language, with the other project languages listed below.
+- Tree rows show only the checkboxes that apply to them: a screen offers export and protection, an alarm none.
+- A very large folder lists its first entries and says how many more the project holds.
+- The runtime settings, alarm classes, OPC UA alarms, connections, data logs, alarm logs, audit trails and logging tags can be changed in the detail view.
+- A connection offers its comment, communication driver, initial address and startup setting, a log its storage, retention, segment and backup settings, and a logging tag every setting it has.
+- The colours of an alarm class are set in the detail view and shown as a colour patch next to the value.
+- The start time of a log segment and the time settings of a logging tag are shown in the detail view.
+- Double-clicking a single alarm opens its settings and its texts for editing, one row per project language.
+- Screens in nested screen folders appear in the project tree and open like any other screen.
+- A screen saved to TIA Portal stays in the screen folder it came from.
+- Screens can be created, renamed and duplicated from the project tree, in any screen folder; the new or renamed screen is shown and selected, and a renamed screen that is open keeps its editor tab and its unsaved changes.
+- Creating, renaming or copying a screen with a name the device already uses is refused.
+- Screen folders and tag table folders can be created, renamed and deleted from the project tree; a delete removes everything inside the folder, after a confirmation that names how many.
+- The screen canvas draws lines, polygons, circles, arcs, text and buttons as the shapes they are, in the place they sit.
+- Lines, polylines and polygons on a screen can be moved like any other object.
+- The property panel only offers the position, size and visibility fields the selected object can take.
+- Properties TIA Portal does not let you change, such as the screen a screen window opens, are shown as read-only.
+- Selecting an object on a screen lists its tag bindings and its event scripts, and a bound tag opens its tag table, also when the tag is a member of a structure tag.
+- An IO field shows the tag its value is bound to.
+- Saving a screen keeps the tag connections and the value mappings of its objects, and the scripts and events that belong to the screen itself.
+- A screen with alarm or trend controls keeps its objects and its scripts when it is saved.
+- The save names the parts of the screen it could not write, and those parts carry TIA Portal's default settings afterwards.
+- A screen that holds a system diagnostics control exports and saves on TIA Portal V21.
+- After a screen is saved or renamed, Studio says how many validation messages TIA Portal has for it, and the Openness Manager output lists each one.
+- Saving a screen that was renamed or removed in TIA Portal after it was opened says so.
+- Opening or saving a Unified screen on a TIA Portal version without WinCC Unified names the version it needs.
+- Tag tables of a WinCC Unified device open in the HMI Tags editor, and the changes save back to the device.
+- A Unified tag table also shows each tag's address and whether it is persistent, and on TIA Portal V21 its display name.
+- Scripts of a WinCC Unified device open as JavaScript in the editor and save back to the device.
+- Discrete alarms, analog alarms and alarm classes of a WinCC Unified device open in an alarm editor, where an alarm can be added, changed and removed, and the changes save back to the device.
+- Alarm text is written in the project language you choose, and a panel under the table shows the text of the selected alarm in every project language at once.
+- The trigger tag and the alarm class of an alarm are picked from the lists the device already holds, so a typed name cannot point at something that is not there.
+- Alarm classes can be added and removed in the alarm editor, and the project tree shows them right away.
+- Right-clicking the Discrete Alarms folder offers Create Discrete Alarms in Bulk, which reads a file with name, trigger tag, bit, alarm text and alarm class per line, checks every row and then creates several hundred alarms in one run.
+- Data logs, alarm logs, alarm classes and connections can be created from the project tree, and the new object opens in its detail view.
+- Alarm classes, data logs, alarm logs, text lists and graphic lists can be deleted from the project tree.
+- Unified screens can be exported as Excel workbooks, edited in Excel and imported back; the Import/Export settings pick the format.
+- Screens are exported into the screen folders they have in the project and imported back into them; a screen that is missing on the device goes back into the folder it was exported from.
+- Tag tables that sit in a tag table folder are exported and imported with that folder.
+- Empty screen folders and tag table folders of a WinCC Unified device appear in the export folder as well.
+- Exported tag tables, scripts, text lists and graphic lists are listed in the export-folder tree.
+- Importing HMI items from a folder also picks up the WinCC Unified export files.
+- The assistant answers questions about a WinCC Unified screen from a short overview of the screen and the tags it uses.
+- The full properties of a single object on a Unified screen are read on request.
+- The assistant answers questions about the tags, alarms, alarm classes, connections, text and graphic lists and logs of a WinCC Unified device, and reads the full properties of any of them by name.
+- On a device with thousands of tags the assistant's list can be narrowed by name or by tag table, and it says how many entries it left out.
+- The assistant reads the entries of a text list or a graphic list, with the value or the range each one covers and the text in every project language or the graphic it shows.
+- The assistant changes single objects on a Unified screen, moving, resizing or renaming them, changing their text and adding or removing them, and every object it does not name stays as it was.
+- While the screen is open in the editor, the change the assistant makes lands there unsaved, so you see it before it goes into the project.
+- The assistant creates and renames screens on a WinCC Unified device, and creates, renames and deletes screen folders.
+- The assistant adds, changes and removes the tags, tag tables, alarms, alarm classes, connections, data logs and alarm logs of a WinCC Unified device, changes its audit trails, and asks before each change, naming the device and the objects it touches.
+- The assistant adds, changes and removes the entries of a text list or a graphic list, creates a list that is missing, and asks before each change.
+- The assistant removes text lists and graphic lists of a WinCC Unified device after asking first; the list's entries go with it, and a screen object that shows the list is left as it is.
+- The assistant reads and changes the runtime settings of a WinCC Unified device.
+- The assistant can have TIA Portal check a WinCC Unified device and report what it objects to, without changing anything.
+- Creating, changing or deleting anything on a WinCC Unified device is part of the Pro plan and unlocked during the free trial; reading and exporting stay available on every plan.
+
+### TIA Portal
+
+- Screens, tag tables and lists of an HMI device inside a device folder open like any other.
+- Right-clicking a TIA project file or archive in the file explorer offers Open with Openness Manager.
+- Archived projects (.zap15 - .zap21) open from the file explorer and from the Open TIA Project dialog: pick a target folder and the project is restored there and opened.
+- Password-protected archives ask for the project user name and password, the same way protected projects do.
+- Closing a screen, HMI tag table, interface or block editor with unsaved changes asks whether to save them.
+- Edits made in an HMI tag table save back to the device.
+- When TIA Portal goes away during an operation, also while a screen is loading, the message names what was interrupted and offers Reconnect.
+- Report Issue can also attach the detailed Openness Manager log and a record of lost TIA Portal connections.
+- Connecting to TIA Portal V21 works right after installation, without a confirmation prompt.
+- Every row in the project tree offers Copy Name and Copy Path, and a folder offers Refresh This Folder, which reloads that part of the project and keeps the tree expanded as it was.
+
+### AI Chat
+
+- Switching to a specialist agent from the chat agent menu applies its role and tools to your next message.
+- An HMI Engineer specialist for WinCC Unified devices is available in the chat agent menu.
+- Editing an earlier message asks before your typed changes are discarded, and slash commands are suggested while you edit.
+- Searching the conversation steps through the matches starting at the newest one.
+- Reasoning output keeps its formatting, and its header stays in place while the answer streams.
+- Every MCP server appears only once in the tools list, each tool names the server it belongs to, and a failing server opens its log with one click.
+- When a request fails, the message names the reason: a rate limit, a rejected request, an account out of credit, a problem on the provider's side, an unreachable provider, a conversation that no longer fits the model, or too many tools for the model, and keeps the provider's own details.
+- When every tool is switched off in Configure Tools, the chat says so and offers to open Configure Tools.
+- Google Gemini connects with a Gemini API key entered on its provider card; the Google account sign-in and the Antigravity provider are retired.
+- A Gemini API key of the wrong type is explained with a link to create the right one.
+- Claude Opus 4.8, Sonnet 5 and Fable 5 offer the Extra High and Max thinking levels.
+- MCP tools work on the Claude Pro/Max sign-in.
+- The ChatGPT model list shows the models your account can use.
+- Grok 4.6 offers the Extra High thinking level, and OpenAI models can switch thinking off.
+- Claude 4.6 and newer models on OpenRouter work in agent mode.
+- Kimi and Moonshot models can use the chat tools, and their usage shows cached input.
+- Z.AI, MiniMax, Moonshot AI, Ollama and Kimi Coding models offer a Thinking Effort control.
+- Gemini 3 models work in agent mode, and Vertex AI offers the Gemini 3 models.
+- LM Studio, vLLM and SGLang accept the server address with or without the API path.
+- Long agent tasks on Mistral, Fireworks, OpenRouter and Cloudflare AI Gateway reuse the prompt cache.
+- Alibaba Model Studio Token Plan is available as a provider, and the suggested model lists for DeepSeek, Z.AI, MiniMax, Alibaba, OpenRouter, Vercel, xAI and Kimi name the current models.
+- Two open Studio windows share one provider sign-in, and when another tool takes over the same sign-in Studio asks you to sign in again.
+- When the provider stops responding or returns an empty reply, the chat says so.
+- A thinking model can be chosen as the conversation summarization model.
+- Configure Tools lists the TIA Portal tools in five groups, all switched on to begin with: projects, blocks, hardware, WinCC Unified screens and objects, and WinCC Comfort and Advanced screens.
+- A tip above the chat input suggests switching off the tools you do not use in Configure Tools to save tokens.
+
+### Agent Window
+
+- The session view and its editors share one pane with a single tab bar, leaving more room for the conversation.
+- File comparisons pick the layout that fits: side by side when there is room, inline when the pane is narrow, with an option to always stay inline.
+- The session header puts the title first and moves secondary actions into an overflow menu.
+- While the assistant works, pills above the input show what the turn is doing, and the turn's file changes stay one click away; the pills can be hidden.
+- Studio notifies you through the system when a session finishes, fails or needs your input while the window is in the background.
+
+### Editor
+
+- Holding Alt offers Close Others only on the tab under the mouse, and not at all when a group holds a single tab.
+
+### Appearance
+
+- The refreshed look gains further polish: clearer activity-bar states, a slimmer status bar and restyled notifications.
+- The file explorer heading keeps the exact casing of your workspace name.
+
+### Studio
+
+- Automatic updates wait while you are on a metered connection and resume on their own once you are back on an unmetered one.
+- Uninstalling Studio on Windows also removes its log files.
+- Other extensions you install must ask once before they may use the Studio tools, run its automation or read its protected content on your behalf, and you can withdraw that access at any time from the Accounts menu.
+
 ## v1.134.2
 
 ### Project Search
