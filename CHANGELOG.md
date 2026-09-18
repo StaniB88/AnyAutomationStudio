@@ -4,6 +4,196 @@ User-facing changes, newest first. The newest section is titled "Unreleased" unt
 fixes the version number; scripts/release.ps1 and scripts/publish.ps1 refuse to run until it is
 renamed to the actual "## v<version>".
 
+## v1.137.0
+
+### Graphical Blocks
+
+<video src="https://anyautomation.ch/video/releasenotes/graphical-blocks-1.137.0.mp4" poster="https://anyautomation.ch/video/releasenotes/graphical-blocks-1.137.0.jpg" autoplay loop muted controls playsinline></video>
+
+[AI Writes Graphical PLC Blocks: LAD and FBD in an IDE (YouTube)](https://www.youtube.com/watch?v=xGkH5kO6tkM)
+
+- A graphical LAD or FBD block can be shown as its networks or as its source text, switched in the block editor.
+- An edit typed into the source text of a graphical block, including new elements and network titles, is saved back into the project on TIA Portal V20 and newer.
+- The assistant reads, edits and uploads graphical LAD and FBD blocks the same as it works with text blocks, and reports the compile result so it can fix any errors itself.
+
+### Project Security
+
+<video src="https://anyautomation.ch/video/releasenotes/project-security-1.137.0.mp4" poster="https://anyautomation.ch/video/releasenotes/project-security-1.137.0.jpg" autoplay loop muted controls playsinline></video>
+
+[Project Security and User Management for a TIA Portal Project (YouTube)](https://www.youtube.com/watch?v=QxcEWQ22dpc)
+
+- Security settings and user management open from the project tree: the project protection and the password policies on one page, the users, user groups and roles on another.
+- Users and the password policies are edited in Studio and written back to the project (Pro).
+- Passwords are set from Studio with the project's own password rules checked as you type (Pro).
+- Roles and their engineering and runtime rights are edited in Studio, and new roles and custom runtime rights are created and deleted (Pro).
+- An unprotected project is given its first administrator and protection from Studio, after a confirmation that this cannot be undone (Pro).
+- The assistant reads the security settings, the users, the user groups, the roles and the rights of a project.
+- The assistant changes a project's users, its anonymous user and its password settings on request, and previews every change before writing (Pro).
+- The assistant creates roles and sets the engineering and runtime rights each one carries (Pro).
+
+### TIA Portal
+
+- A hardware change TIA Portal does not accept is reported with its reason, in the editor and in the assistant (Pro).
+- The project library shows whether a type is a faceplate, a script module or a block type, with every version and its state under it.
+- A library type opens in its own view with its versions and where it is used.
+- A version of a library type is created, released, discarded, set as default and deleted from the project tree (Pro).
+- A library type is exported as documents in the formats TIA Portal offers for it, and a type or a new version of a type is imported from documents (Pro).
+- The assistant reads the types of the project library, exports and imports as documents the types TIA Portal offers a format for, finds where a type is used, and creates, releases, discards, sets as default and deletes the versions of a type (Pro).
+- The Project Explorer shows the networks of the project, with their subnets and the interfaces that sit on them (Pro).
+- Subnets of every kind are created and deleted from the Project Explorer and by the assistant (Pro).
+- A network interface is connected to a subnet, moved to another one, disconnected and given its address, from the Project Explorer and by the assistant (Pro).
+- The Project Explorer shows the IO systems of a network with their controller and the devices assigned to them (Pro).
+- An IO system is created and deleted from the Project Explorer and by the assistant (Pro).
+- A device is assigned to an IO system, moved to another one and released, from the Project Explorer and by the assistant (Pro).
+- The assistant exports the hardware configuration of the project as AML (Pro).
+- The assistant exports the OPC UA server interface of a PLC (Pro).
+- The assistant reads the attributes of a hardware item (Pro).
+- The Project Explorer shows fail-safe PLC data types with their own icon.
+- A fail-safe PLC data type opens as editable source on TIA Portal V20 and newer and, with the safety login, is saved back into the project.
+- Fail-safe PLC data types stay fail-safe through export and import.
+- Fail-safe items that cannot be imported without the safety login are named, with a button to log in (Pro).
+- A project that cannot be opened names the reason, and a protected project's password prompt gives up after three wrong passwords.
+- An item marked as protected, or kept in a marked folder, is never overwritten by an import, an editor save or the assistant.
+- The Compare Editor names why an item could not be compared, for example a block that is not compiled, a project that compiled with errors or a safety program that must be logged in first.
+- A file that differs from the project only in its line endings is shown as unchanged in the Compare Editor.
+- An import and export profile keeps the data type format choice with its other settings.
+- Exported F-signatures are saved as a tab-delimited text file (Pro).
+- Exported blocks keep uniform line endings.
+
+### Project Search
+
+- A project opened without TIA Portal is searched: the code of its SCL and STL blocks, and its data blocks, PLC data types and tag tables in the form the editor shows them (Pro).
+- The search page opens beside the project tree when a project is open, with or without TIA Portal.
+- Replacing in a project opened without TIA Portal keeps the changed blocks for the session, to be exported or saved as files (Pro).
+- A fail-safe PLC data type outside a software unit is searched in its source text on TIA Portal V20 and newer, and a match opens it at the matched line.
+
+### WinCC Unified
+
+- The object and property columns of the screen editor can be resized and keep their width.
+- A screen and its objects are drawn with their own background and fill colours, including gradients and hatch patterns, and an object without a fill is drawn without one.
+- A screen is drawn with the colours, spacing, text weight and line wrapping of its device style, and a caption longer than its object wraps inside it and is cut with an ellipsis.
+- A screen on a dark background is drawn in the dark style, and the style can be fixed in the settings.
+- The font used for screens can be set.
+- A text or graphic bound to a list shows the list's default entry on the screen.
+- Trend, alarm, parameter and diagnosis controls on a screen show their bars, axes and table headers.
+- A screen window shows the screen it references.
+- Graphic views, buttons and switches show their picture on the screen.
+- Custom widgets show their drawing on the screen, including ones placed from the installed symbol library.
+- A custom widget on a screen is drawn with the colours and the state its configuration sets.
+- An HMI export includes the pictures its screens use.
+- A screen opened from the export folder shows its pictures and its list entries.
+- An exported screen inside a screen folder saves back to its device (Pro).
+- Tag tables of a WinCC Unified device open on TIA Portal V21.
+- A tag with limits shows its upper and lower thresholds under it in the tag table, and their value and value type can be changed there (Pro).
+- The export and import of a WinCC Unified device include its system text lists.
+- A tag is renamed in the tag table, an alarm in the alarm editor, and tag tables, alarms, alarm classes, connections, logs, logging tags and OPC UA alarm types from the project tree or their detail view (Pro).
+- The alarm editor shows the acknowledgment control tag and the bit numbers of a discrete alarm.
+- Alarms created in bulk from a file carry their event text (Pro).
+- A text typed for a new alarm in the alarm editor is saved with the alarm (Pro).
+- A script module of a WinCC Unified device is created from the project tree and opens right away (Pro).
+- A script module opens and saves straight from the project tree (Pro).
+- Saving a screen keeps the bindings and event scripts of a control's columns, curves, axes and tool bar elements, and a script binding's trigger type and trigger tags (Pro).
+- Bindings and event scripts of a screen object and of its parts are added, changed and removed in the bindings panel of the screen editor (Pro).
+- An object palette in the screen editor adds shapes, widgets, controls and containers by click or by dragging onto the screen, with the defaults TIA Portal gives a new object (Pro).
+- A faceplate container is added to a screen with the faceplate type and version it shows, picked from the project library (Pro).
+- Screen objects are duplicated, copied and pasted, aligned, distributed and brought to the front or sent to the back (Pro).
+- A screen can be resized to the display of its device (Pro).
+- The plant view of a project and its nodes are shown in the project tree, where a view or a node is created, renamed and deleted and a node takes its plant object type (Pro).
+- The plant object tags of a WinCC Unified device are listed under the device with their members and logging tags, and their acquisition cycle, acquisition mode, connection and PLC tag are changed in the detail view (Pro).
+- A setting TIA Portal does not keep is reported as not applied.
+- A folder of exported text lists imports back complete.
+- A comment typed into a tag table lands in the project language the column shows (Pro).
+- An empty text property of a WinCC Unified object, such as the comment of a connection, can be filled in from the detail view (Pro).
+- The assistant can add, change and remove bindings and event scripts on a screen object and on its parts (Pro).
+- The assistant adds a faceplate container with its type, duplicates, aligns, distributes and reorders objects, and resizes a screen to its device (Pro).
+- The assistant reads the plant model of a project, creates, renames and deletes plant views and nodes, and changes the plant object tags of a device (Pro).
+- The assistant renames tags, tag tables, alarms, alarm classes, connections, logs and audit classes on a WinCC Unified device (Pro).
+- The assistant has TIA Portal check a WinCC Unified device, whole or narrowed to one tag table, on every plan.
+- The assistant sees every open HMI editor: screens, tag tables, alarm tabs, object details and scripts.
+- The assistant lays its changes into the open tag table or alarm editor as unsaved edits you review before saving (Pro).
+- The assistant creates discrete alarms from a table of rows (Pro).
+- The assistant duplicates and deletes screens of a WinCC Unified device (Pro).
+- The assistant finds the tag table a tag belongs to.
+- The assistant exports the files of a WinCC Unified device, as exchange documents or as a workbook.
+- The assistant imports exported device files back into a WinCC Unified device (Pro).
+- The assistant re-words the entries of a system text list and sets the comment and the value range of a text or graphic list (Pro).
+- The assistant changes the value and value type of a tag's thresholds and works on a tag's logging tags (Pro).
+- The assistant tells which WinCC Unified devices a project holds and which languages it carries.
+- The assistant reads the script modules of a WinCC Unified device, changes a line or the whole source, and creates a module (Pro).
+- The assistant's summary of a screen lists the interface values of a faceplate instance.
+- The assistant names the screen properties the installed TIA Portal version cannot read.
+
+### EPLAN
+
+- A missing EPLAN API Extension module is named as the reason a connection fails, with a link to the documentation (Pro+).
+- The variant picker lists only the EPLAN installations that can open a project (Pro+).
+- The hardware import from EPLAN into TIA Portal can be started from the chat (Pro+).
+- The page list of an EPLAN project is filtered by a page's description as well as its name (Pro+).
+- Changes to an EPLAN project take effect immediately and cannot be taken back from Studio (Pro+).
+
+### SCADA
+
+- Generated dashboards connect to PLCs whose OPC UA server requires signing, encryption or a user login (Pro).
+- A generated dashboard connects over a direct S7 link, an MQTT broker or OPC UA, with the SCADA page showing the fields each one needs, including the rack and slot of an S7 PLC (Pro).
+- On an S7 connection, signals without a fixed hardware address are listed as left out and need OPC UA (Pro).
+- On an MQTT dashboard, a read/write signal sends its value back to its topic when you change it from an input field or a button (Pro).
+- A signal comment can bind an MQTT signal to a member of a JSON message on a topic, and set which topic it uses (Pro).
+- Trend charts keep their history and open already filled (Pro).
+- Values show the unit and the decimals noted in the signal comment, and input fields keep entries within the signal's limits (Pro).
+- A signal can be marked as an alarm, in its comment or by the assistant, and the dashboard raises it and shows an alarm banner in its header (Pro).
+- A screen can show a table of the active alarms with their time, message, group and acknowledgment (Pro).
+- An On Send choice on the SCADA page and in the assistant picks whether a send merges into the FUXA project you already have, keeping the screens, devices and alarms you made there by hand, or replaces it (Pro).
+- Before a dashboard replaces the project on your FUXA instance, the confirmation tells you how many devices, views and tags are there now (Pro).
+- Open FUXA straight from the SCADA page or from the message after sending (Pro).
+- A folder of your own SVG symbols is read including its subfolders (Pro).
+
+### AI Chat
+
+- Tool approvals are grouped the way the tool picker groups tools, each group foldable and with one choice in its header setting the approval level for every tool in it.
+- An open tag table, alarm tab or object detail view can be attached to a chat turn.
+- With a GitHub account signed in, an issue or pull request can be attached to a chat turn from Add Context or by pasting its link into the input.
+- A fresh installation starts with the chat assistant ready to use.
+- A finished answer folds its working steps away and keeps the final reply in view.
+- Scrolling back through a long conversation keeps the request you are reading pinned to the top.
+- The permissions button under the input can run the terminal commands the assistant proposes in a sandbox.
+- The assistant asks first before changing the files that configure your tools or package sources.
+- Agent Customizations lists your instructions, skills, agents, tools and servers as cards and opens the details of each one in the same view.
+- Output that a tool returns is shown with the highlighting of its own format.
+- The controls under the input stay usable in a narrow panel, and the input keeps its height when those controls change.
+
+### Agent Window
+
+- Starting a session brings the prompt, the model and the folder together in one input.
+- The chats of a session are listed under it, each with its own title, status and pending approval, and each can be opened, renamed or removed from there.
+- F2 renames what you have selected in the session list, Delete archives a session, and the chat shortcut jumps to the session you are working in.
+- The bottom panel keeps its place across restarts, each session returns with the view it had open there, and the side pane keeps its width.
+- The chat surface can carry a background, a built-in icon pattern or an image of your own, placed as you choose and kept separately for dark and light themes.
+- While screen reader optimized mode is on, a badge in the title bar shows it and turns it off when selected.
+
+### Editor
+
+- A file comparison can be set to inline, side by side or automatic from its overflow menu, and automatic shows which layout it is using.
+- A changed image or other binary file stays listed in a multi-file comparison and opens in its own comparison.
+- Choosing which editor opens a file keeps that choice for the same kind of file and switches the open file over.
+- Wrapped lines stay inside the visible width when a line carries colour swatches, inlay hints or breakpoint markers.
+- The integrated browser opens saved web pages, and right-clicking a misspelled word offers corrections and adding it to the dictionary.
+- The integrated browser can be set to share one session with the pages the assistant opens, so both see the same signed-in state.
+- Dictation keeps the text it heard when you stop and ends a forgotten recording on its own.
+- A speech model you downloaded is installed from its archive.
+
+### Terminal
+
+- A terminal in its own window draws box and powerline characters.
+
+### Appearance
+
+- A compact layout density, picked from the settings menu, closes the gaps between the side bars, the panel and the editor to leave more room for content.
+- Tabs, headings and icons share one size and weight across the refreshed look.
+
+### Studio
+
+- All new views, dialogs and messages of this release are available in all 14 display languages.
+
 ## v1.135.0
 
 ### WinCC Unified
