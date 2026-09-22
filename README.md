@@ -1,6 +1,6 @@
 # AnyAutomation Studio
 
-**The automation engineering IDE for TIA Portal** — AI code generation, PLC online access, SCL unit testing, PLCSIM Advanced, OPC UA, Forge, and CI/CD, in one code-first workspace.
+**The AI engineering IDE for PLC programming with Siemens TIA Portal and CODESYS.** AI code generation for SCL (Structured Text) with full project context, PLC online access, SCL unit testing on PLCSIM Advanced or real hardware, OPC UA, Forge, Git and CI/CD, in one code-first workspace.
 
 [![Website](https://img.shields.io/badge/Website-anyautomation.ch%2Fstudio-7C3AED)](https://anyautomation.ch/studio)
 [![Download](https://img.shields.io/badge/Download-Latest%20Release-22C55E)](https://github.com/StaniB88/AnyAutomationStudio/releases/latest)
@@ -13,6 +13,12 @@
 ![The AnyAutomation Studio workbench — Activity Bar, Project Explorer, editor area, AI Chat, and status bar](screenshots/user-interface.png)
 
 This repository is also the **public release channel**.
+
+## What is AnyAutomation Studio?
+
+AnyAutomation Studio is a Windows desktop IDE for PLC engineers. It connects to Siemens TIA Portal (V15 through V21, official Openness API) and to CODESYS 3.5, and puts the whole engineering loop into one workspace: an AI assistant that generates, refactors and explains SCL with the real tag names and data types of your project, using the AI provider of your choice (Claude, GPT, Gemini, 20+ cloud providers, or local models via Ollama, LM Studio, vLLM and SGLang); SCL unit tests on PLCSIM Advanced or a real S7 PLC with a CI/CD runner; PLC online monitoring over native S7 and OPC UA; bulk block export and import as Git-friendly text sources; block and project compare; a Git client; a reusable block library (Forge); an EPLAN connector; FUXA web SCADA generation; and an AES-256 password vault for know-how protection.
+
+Typical questions it answers: AI for PLC programming, AI SCL code generation for TIA Portal, TIA Portal AI assistant, Siemens Industrial Copilot alternative, PLC unit testing on PLCSIM Advanced, Git for TIA Portal, AI for CODESYS. Full comparison of AI tools for PLC programming: [anyautomation.ch/en/best-ai-for-plc-programming](https://anyautomation.ch/en/best-ai-for-plc-programming).
 
 ---
 
