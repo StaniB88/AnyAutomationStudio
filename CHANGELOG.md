@@ -4,6 +4,278 @@ User-facing changes, newest first. The newest section is titled "Unreleased" unt
 fixes the version number; scripts/release.ps1 and scripts/publish.ps1 refuse to run until it is
 renamed to the actual "## v<version>".
 
+## v1.142.0
+
+### Release highlights
+
+This release puts TIA Portal projects under version control, brings global libraries, library updates and much more hardware configuration into the Project Explorer, and lets the assistant find usages, unused objects and safety settings for you.
+
+- [Version Control Workspaces](#version-control-workspaces): keep blocks, data types, tag tables and technology objects as files and version them with the tool you already use.
+- [TIA Portal V15.1 Support](#tia-portal-v151-support): open, attach and import V15.1 projects like every other version.
+- [Global Libraries](#global-libraries): open your company and system libraries next to the Project Library and use their types and master copies.
+- [Find References Down to the Location](#find-references-down-to-the-location): jump straight to the network, the line, the member or the tag where a block is used.
+- [CPU Protection, Users, Certificates and Syslog (Pro)](#cpu-protection-users-certificates-and-syslog-pro): set a CPU's protection, users, certificates and syslog without opening TIA Portal.
+- [Safety Validation and Safety Settings Through the Assistant (Pro)](#safety-validation-and-safety-settings-through-the-assistant-pro): let the assistant prepare activation tests and write the acceptance report.
+
+### Version Control
+
+#### Version Control Workspaces
+
+Until now, keeping the program of a TIA Portal project under version control meant exporting blocks by hand and keeping the files in step yourself. Now a workspace links blocks, PLC data types, tag tables and technology objects of the project to files in a folder you choose, one file per object. By default the files go into subfolders that follow the block groups of the project, so you can version the folder with Git, SVN or any other tool you already use.
+
+Right-click **Version Control Workspaces** at the end of the **Project Explorer** and choose **New Workspace...**, then use **Version Control Workspaces** > **Export to Workspace...** or **Connect to Workspace...** on blocks or folders. The workspaces are saved with the project. You can see workspaces and their status on every plan. Creating, changing, connecting, exporting and importing need Pro. Managing workspaces is available from TIA Portal V17, and connecting, exporting and synchronizing from TIA Portal V20.
+
+The assistant can also set up workspaces, export objects into them, read their status and synchronize them. It shows you what it will change before it touches the project.
+
+Learn more in [Version Control with Workspaces](https://anyautomation.ch/en/docs/version-control)
+
+#### Workspace Status
+
+Until now, you could not tell whether an object had changed in the project, in its file or in both places. Double-click a workspace to open its **Workspace Status**. Each connected object is listed with its state: **Equal**, **Project changed**, **File changed**, **Both changed** or **File missing**.
+
+Tick the objects you want and choose **Export Selected to Workspace** or **Import Selected from Workspace**. Studio asks before every import. For an object changed on both sides, choose **Keep Project Version** or **Keep File Version** in its row. Available from TIA Portal V20.
+
+TIA Portal reads the files of a workspace as they are. If you edit SCL files of a workspace in Studio, run **Format Document** before you import them, so they arrive in the TIA Portal layout. After the update, enter your TIA Portal values once under **Settings** > **Editor** > **SCL Formatting**.
+
+Learn more in [Version Control with Workspaces](https://anyautomation.ch/en/docs/version-control)
+
+#### More Version Control Improvements
+
+- The **Version Control Workspaces** folder and its workspaces use the TIA Portal icons, drawn in the modern style of the Project Explorer.
+
+### TIA Portal
+
+#### TIA Portal V15.1 Support
+
+Until now, TIA Portal V15.1 could not be used with Studio. V15.1 now connects like every other version. Its projects and archives (.ap15_1, .zap15_1) open, attach and import, and **New Project** offers V15.1.
+
+Learn more in [Installation](https://anyautomation.ch/en/docs/installation)
+
+#### SCL Blocks Arrive in the TIA Portal Layout
+
+Until now, a block edited outside TIA Portal, including one the AI wrote, arrived in TIA Portal with its own indentation. Now Studio lays out every SCL block the way the TIA Portal editor does before it imports it: with **Import Selected**, **Import All**, a drag onto the **Project Explorer**, saving a block in the editor, a block the AI assistant writes or changes, and a deploy from Forge. **Format Document** in the editor uses the same layout.
+
+Studio takes the tab width, indent mode and parameter alignment you enter under **Settings** > **Editor** > **SCL Formatting**. Enter the same values as in TIA Portal, and a block looks the same in both. To import SCL blocks exactly as written, turn off **Format SCL Blocks Before Import** in the same section. It is on by default. If a block cannot be formatted, it is imported as written, and the import message names it.
+
+![The SCL Formatting section in the Settings with tab width, indent, parameter alignment and the Format SCL Blocks Before Import switch](https://anyautomation.ch/video/releasenotes/scl-formatting-1.142.png)
+
+Learn more in [Import / Export](https://anyautomation.ch/en/docs/import-export)
+
+#### Global Libraries
+
+Until now, the Project Explorer showed only the **Project Library**, so working with the standard blocks of your company meant going back to TIA Portal. The new **Global Libraries** branch sits next to the **Project Library**. Right-click it and choose **Open Global Library...** or **Open System Library...**, and the library's **Master Copies** and **Types** appear in the tree. Badges show whether a library is **Read-only** or **Modified**.
+
+You can also create libraries with **New Global Library...**, and use **Save**, **Save As...**, **Archive...**, **Retrieve Global Library...** and **Close**. A library from an older TIA Portal version opens as an upgraded copy, and the original stays unchanged. You can instantiate, export and manage the types and master copies of a global library just like those of the Project Library. The assistant can open, manage and work with global libraries too.
+
+Opening a library read-only works on every plan. Opening with write access, creating, saving, archiving and retrieving need Pro.
+
+![The Project Explorer with the Global Libraries branch open, showing the system library Long Functions as read-only with its master copies](https://anyautomation.ch/video/releasenotes/global-libraries-1.142.png)
+
+Learn more in [Library Management](https://anyautomation.ch/en/docs/library-management)
+
+#### Find References Down to the Location
+
+Until now, Find References showed which objects use a block, and you still had to search each object for the place where the block is used. Now the **TIA References** view puts every location on its own line under the object it belongs to and names the kind of access. Click a location and Studio takes you there: a graphical block opens at the **network**, an SCL block at the first use in its code, a data block or PLC data type at the **member**, and a tag or constant opens its tag table with the tag shown.
+
+Monitoring, modifying, forcing, alarms and declarations are listed in their own **Other accesses** group. When a location is on another device, for example an HMI device, the row names that device. Right-click a location for **Go to Reference**, **Go to Definition**, **Reveal in Project Explorer** or **Copy Reference Location**.
+
+![The TIA References view listing every read and write of a data block on its own line, with the kind of access and the location](https://anyautomation.ch/video/releasenotes/tia-references-1.142.png)
+
+Learn more in [Find in Project](https://anyautomation.ch/en/docs/find-in-project)
+
+#### CPU Protection, Users, Certificates and Syslog (Pro)
+
+Until now, a CPU's protection and user settings could only be changed in TIA Portal. Right-click a CPU now to reach **PLC Protection…**, **OPC UA Users…**, **Web Server Users…**, **Certificate Management…** and **Syslog…**. Each command reads the current setting first and offers only what the CPU's firmware supports. You can set the access level and its passwords, choose access control with a UMC server, and turn on account locking. You can also add, change and delete OPC UA and web server users and switch the system web pages on or off.
+
+You enter every password twice in masked fields, and it never appears again. The assistant can read and change a CPU's protection, users, certificate management and syslog. Adding a user and setting a password are left to you in the Project Explorer. Certificate management needs TIA Portal V18, syslog V19 and account locking V21.
+
+Learn more in [Hardware](https://anyautomation.ch/en/docs/hardware)
+
+#### Safety Validation and Safety Settings Through the Assistant (Pro)
+
+Until now, the activation tests of the **Safety Validation Assistant** and the safety settings of a fail-safe PLC were set up in TIA Portal only. Now the assistant lists the activation tests with their groups, safety functions and conditions, checks whether a test is complete enough to run, and creates, changes, exports and imports tests after you confirm. It also writes the acceptance report as an Excel workbook. You still run the activation test itself in TIA Portal.
+
+The assistant also reads and sets the F-block number ranges and the safety system version. Ask it to set or remove the password of the safety program and Studio asks you for the password in a masked field, so the assistant never sees it.
+
+The Safety Validation Assistant tools work from TIA Portal V21, the safety settings and the password from TIA Portal V17. Available with Pro.
+
+Learn more in [AI Chat](https://anyautomation.ch/en/docs/ai-chat)
+
+#### Ask the Assistant Where Something Is Used
+
+Until now, the assistant could only tell you where a block is used. Now you can ask it where a PLC data type, a tag table, a tag or a constant is used, and it lists every location with its kind of access and its device. It can also open the block at the network, the data block at the member or the tag table at the tag it talks about, so you land on that spot.
+
+You can also ask which objects of a PLC nothing uses. The assistant lists the blocks, data blocks, PLC data types, tags and constants that nothing refers to, without compiling or exporting the PLC. For a single OB, FB, FC or data block it lists which interface members are used and which are not.
+
+Listing unused objects and interface members is available with Pro, from TIA Portal V18.
+
+Learn more in [AI Chat](https://anyautomation.ch/en/docs/ai-chat)
+
+#### Keep the Project Up to Date with a Library
+
+Until now, you had to open TIA Portal to find out-of-date library instances and update them. Open the **Library Updates** submenu on a library, a type folder or a type. **Check for Updates...** then lists the instances in the project that are out of date, device by device.
+
+**Update Project...** and **Update Library...** bring the project or another library in line with the source library. **Harmonize Project...** aligns the paths and names of the instances with their library types. Before anything changes, a confirmation tells you what TIA Portal will change. Afterwards, the message counts the library types that were added, changed and removed, and **Show Details** lists them by name.
+
+**Compare to...** on a library row shows the differences between two libraries, element by element. The assistant can check for updates, update and compare libraries for you as well. Checking for updates and comparing work on every plan, and comparing needs TIA Portal V18. Update Project, Update Library and Harmonize Project need Pro.
+
+Learn more in [Library Management](https://anyautomation.ch/en/docs/library-management)
+
+#### Find, Compare and Mark Library Types
+
+If you know a library type only by its GUID, for example from a log or a colleague, run **Go to Library Type by GUID...**. It searches the project library and every open global library, and opens the matching type or type version. **Copy GUID** copies the identifier of a type or version to the clipboard.
+
+**Compare with...** shows the differences between two library types, two type versions or two master copies, property by property, from TIA Portal V18.
+
+Types can now be marked in the **Library** submenu and on the **Library Type** page. **Mark as Do Not Use** is available from TIA Portal V20, and **Mark for Update** from TIA Portal V18 in a global library opened with write access. Changing the marks needs Pro.
+
+Learn more in [Library Management](https://anyautomation.ch/en/docs/library-management)
+
+#### Port Cabling in the Project Explorer (Pro)
+
+Until now, to see or change which port is cabled to which, you had to open the topology view in TIA Portal. Now each port under a network interface in the Project Explorer shows its partner as device and port, for example `Switch_1 / Port_8`.
+
+Right-click a port and choose **Connect Port…** to pick the device and one of its free ports. **Disconnect Port** removes the cable after you confirm, and the question names the current partner. You can also ask the assistant which ports are cabled together, or have it connect or disconnect two ports. It asks before every change.
+
+Learn more in [Hardware](https://anyautomation.ch/en/docs/hardware)
+
+#### Set Several Attributes at Once (Pro)
+
+Right-click a device, module, interface, port, subnet or IO system and choose **Set Attributes…**. Tick the attributes you want to change, enter the values, then choose **Apply What TIA Portal Takes** or **Apply All or Nothing**. The message afterwards lists every value that was set and, for each value TIA Portal did not take, the reason. The assistant can list the attributes you can write and set several of them in one step.
+
+Available with Pro, from TIA Portal V18.
+
+Learn more in [Hardware](https://anyautomation.ch/en/docs/hardware)
+
+#### Hardware from Master Copies (Pro)
+
+You can now create stations, modules, subnets and device groups from a master copy without leaving Studio. Right-click a master copy in the **Project Library** or under **Global Libraries** and choose **Create Hardware from Master Copy…**, or right-click **Hardware** and choose **Add Station from Master Copy…**. If the name is already taken, TIA Portal gives the new object another name, and the message shows both names. The assistant can create hardware from a master copy of the project library or a global library.
+
+Learn more in [Hardware](https://anyautomation.ch/en/docs/hardware)
+
+#### I-Devices and Redundancy Domains (Pro)
+
+A CPU interface can now work as an I-device and keep its controller role. Right-click the interface and choose **Set Operating Mode…**. Its transfer areas appear as rows under the interface, and you add or remove them with **Create Transfer Area…** and **Delete Transfer Area**. To hand the I-device to an IO controller in another project, choose **Export I-Device GSD…**. This export works from TIA Portal V21.
+
+MRP and sync domains now appear under their Ethernet subnet in the **Networks** branch. You can create them with **Create Redundancy Domain…**, add interfaces with **Add Participants…** and remove a domain with **Delete Redundancy Domain**. The assistant can do all of this on request and asks before every change.
+
+Learn more in [Hardware](https://anyautomation.ch/en/docs/hardware)
+
+#### Communication Connections (Pro)
+
+A CPU or HMI panel now has a **Connections** branch with one row per connection, showing the type and the partner. Incomplete connections are marked. Right-click the device and choose **Create Connection…** to set up an S7, TCP, UDP, ISO-on-TCP or HMI connection, and use **Delete Connection** to remove one. The assistant can list, create and delete connections.
+
+Available with Pro, from TIA Portal V21.
+
+Learn more in [Hardware](https://anyautomation.ch/en/docs/hardware)
+
+#### Compare Hardware (Pro)
+
+Right-click a device or a module and choose **Compare Hardware With…** to compare two stations or two modules. The **Hardware Comparison** page shows both sides as a tree. Each object is marked in a **Result** column, for example **Identical**, **Different** or **Only on the left**, and a summary counts the objects in each state. The assistant can run the same comparison and report the result in the chat.
+
+Learn more in [Hardware](https://anyautomation.ch/en/docs/hardware)
+
+#### Unsaved Profile Changes
+
+The **Save** icon in the **Profiles** bar now shows how many changes are not yet saved to the profile. Marking or unmarking an item, changing an import/export setting or changing the export folder each count as one change. Before Studio closes, before you disconnect and before another project becomes active, Studio lists these changes and asks you to **Save**, **Don't Save** or **Cancel**.
+
+Learn more in [Protected Items](https://anyautomation.ch/en/docs/protected-items)
+
+#### More TIA Portal Improvements
+
+- Library types show whether they are an FB, FC or PLC data type, each row names its default version, and the hover adds the programming language and block number.
+- Master copies show what they hold in the Project Explorer, and their hover names the author, the creation date and the content.
+- Before a Multi-User check-in, the objects you changed are shown as yours, and any you untick are left out of the check-in.
+- Find Unused counts a function block as used when another block holds it as a multi-instance.
+- You can read, discover and write the parameter data of a module described by a GSD file, byte by byte (Pro).
+- You can switch the communication of a telecontrol CP on and off, and export, import and create its data points, from TIA Portal V20 (Pro).
+- You can export a project's system diagnostics settings to a file and import them again (Pro).
+- You can export a software controller's resource assignment from TIA Portal V21, and export the PC system configuration file for stations that support it (Pro).
+- **Show in Hardware Editor…** opens a device or the whole project hardware in the device, network or topology view of TIA Portal (Pro).
+- A progress bar runs in the header of the Import / Export view while the export folder is re-read, also after a branch switch in that folder.
+- The export folder tree hides the .git folder of a Git repository.
+- **Filter** and **Refresh** are now on the first row of the export folder tree, and **Reveal in File Explorer** is next to the folder button.
+- The **Security settings** folder with its **Settings** and **Users and roles** rows uses the same modern icon style as the rest of the Project Explorer.
+- **Export as JSON** shows its progress, the elapsed time and **Cancel** in the **Import / Export** section, like every other export.
+
+### Forge
+
+#### Build and Deploy Errors That Lead You to the Cause
+
+Until now, you had to search the template yourself when a build failed. Now the **Build Output** view shows a failed build with its reason and names the block type, the template and the line, and **Open Template** takes you to that line. When TIA Portal reports a compile error after a deploy, a double-click on the error opens the generated block at the statement.
+
+Learn more in [Forge](https://anyautomation.ch/en/docs/forge)
+
+#### Modules with Instances (Pro+)
+
+Until now, a function block that your project calls several times, each time with its own instance data block, data blocks and tags, had to be copied and adapted by hand for every further use. Now right-click the function block in the **Block Type Library** and choose **Parameterise as Module**. After a preview of the places it touches and a dry run, the project graph holds one node per module instance, and the blocks and tag tables that mention the instances are generated from the instance list.
+
+Right-click an instance node and choose **Add Module Instance** to add the next instance with its connections, or **Remove Node** to remove one; Studio names the blocks that generate code for it. **Create Project Graph from Library** shows module instances as nodes, and **Deploy Graph to TIA Portal** brings the data blocks of every instance along under their instance names. **Duplicate Block Type** on a module copies the plain captured block. Available with Pro+.
+
+Learn more in [Forge](https://anyautomation.ch/en/docs/forge)
+
+#### More Forge Improvements
+
+- Large project graphs build to the end, however long the build takes.
+
+### AI Chat
+
+#### Assistant Exports Follow Your Export Settings
+
+Until now, you could not be sure an export the assistant ran matched one you ran yourself. Now every export the assistant runs uses your export options from **Settings** > **Import/Export Settings**, with the same default values, document info and version control preparation as **Export Selected**. You cannot change these options from the chat, so every export uses your settings.
+
+Learn more in [Import / Export](https://anyautomation.ch/en/docs/import-export)
+
+#### Model Picker with a Tab per Provider
+
+The model picker in the chat input now shows the models of each provider on their own tab, so you can switch models quickly. Point at a model to open its details card, where you set its thinking level and context size if the model offers them.
+
+Learn more in [AI Chat](https://anyautomation.ch/en/docs/ai-chat)
+
+#### More AI Chat Improvements
+
+- The chat keeps answering after you trust a folder or enable an extension, without reloading the window.
+- The chat title shows which harness runs the session, next to the session name.
+
+### Agent Window
+
+#### Choose Where a New Session Works
+
+Until now, you set up each new session's working copy yourself. Now a new session works in the folder you opened. To let the agent work in a separate copy that you merge only when you are happy with it, choose **New Worktree** above the input. Studio keeps the choice for your next sessions.
+
+Learn more in [Agents Window](https://anyautomation.ch/en/docs/agents-window)
+
+#### More Agent Window Improvements
+
+- **Filter Sessions** lists the harnesses Studio offers: Copilot, Claude and Local.
+- Right-click a panel tab and choose **Align Panel** to lay out the bottom panel **Center** or **Justify**. The choice is kept per profile.
+
+### Editor
+
+#### Markdown Editor
+
+Choose **Open With** on a Markdown file and pick the **Markdown Editor** to edit the file in its rendered form. While you edit, every source line stays on its own line. You can paste a screenshot straight into the document, rename a file link everywhere with **Rename Symbol**, move around with the outline and breadcrumbs, and copy any code block with its own copy button.
+
+#### More Editor Improvements
+
+- **Settings** > **Text Editor** > **Occurrences Highlight From All Providers** shows the document highlights of every provider together.
+
+### Licensing
+
+#### More Licensing Improvements
+
+- When you activate on another computer after using up all machine switches of the last 30 days, the **License** window says so.
+
+### Studio
+
+#### More Studio Improvements
+
+- The release notes show a table of contents beside the text that marks the section you are reading, and their headings take the accent color of your theme.
+
+### Removed and changed
+
+- Terminal sandboxing for local sessions is no longer offered.
+
 ## v1.141.0
 
 ### TIA Portal
